@@ -10,3 +10,9 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# vscode config
+traverse_a_tree/.vscode/
+
+# debug file
+traverse_a_tree/debug
