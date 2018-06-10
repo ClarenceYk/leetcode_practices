@@ -13,9 +13,15 @@ func main() {
 	root := getBinaryTree()
 	fmt.Printf("Recursively preorder traverse binary tree: %v\n", preorderRecursiveTraverse(root))
 	fmt.Printf("Iteratively preorder traverse binary tree: %v\n", preorderRecursiveTraverse(root))
+	fmt.Println()
 
 	fmt.Printf("Recursively inorder traverse binary tree: %v\n", inorderRecursiveTraverse(root))
 	fmt.Printf("Iteratively inorder traverse binary tree: %v\n", inorderIterativeTraverse(root))
+	fmt.Println()
+
+	fmt.Printf("Recursively postorder traverse binary tree:    %v\n", postorderRecursiveTraverse(root))
+	fmt.Printf("Iteratively postorder traverse binary tree(1): %v\n", postorderIterativeTraverse1(root))
+	fmt.Printf("Iteratively postorder traverse binary tree(2): %v\n", postorderIterativeTraverse2(root))
 }
 
 // Binary tree example:
