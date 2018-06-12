@@ -1,6 +1,9 @@
-package main
+package traverse
 
-func levelOrderTraverse(root *TreeNode) [][]int {
+import bt "github.com/clarenceyk/leetcode_practices/binary_tree"
+
+// LevelOrderTraverse traverse a tree in level order
+func LevelOrderTraverse(root *bt.TreeNode) [][]int {
 	out := make([][]int, 0)
 	for i := 1; i <= height(root); i++ {
 		nodes := make([]int, 0)
@@ -10,7 +13,7 @@ func levelOrderTraverse(root *TreeNode) [][]int {
 	return out
 }
 
-func height(root *TreeNode) int {
+func height(root *bt.TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -22,7 +25,7 @@ func height(root *TreeNode) int {
 	return lr + 1
 }
 
-func nodesOnGivenHight(root *TreeNode, h int, nodes *[]int) {
+func nodesOnGivenHight(root *bt.TreeNode, h int, nodes *[]int) {
 	if root == nil {
 		return
 	}

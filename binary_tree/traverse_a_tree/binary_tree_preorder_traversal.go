@@ -1,16 +1,18 @@
-package main
+package traverse
 
-func preorderRecursiveTraverse(root *TreeNode) []int {
+import bt "github.com/clarenceyk/leetcode_practices/binary_tree"
+
+func preorderRecursiveTraverse(root *bt.TreeNode) []int {
 	out := make([]int, 0)
 	preorderRecursiveTraverseHelper(root, &out)
 	return out
 }
 
-func preorderIterativeTraverse(root *TreeNode) []int {
+func preorderIterativeTraverse(root *bt.TreeNode) []int {
 	return preorderIterativeTraverseHelper(root)
 }
 
-func preorderRecursiveTraverseHelper(root *TreeNode, out *[]int) {
+func preorderRecursiveTraverseHelper(root *bt.TreeNode, out *[]int) {
 	if root == nil {
 		return
 	}
@@ -19,12 +21,12 @@ func preorderRecursiveTraverseHelper(root *TreeNode, out *[]int) {
 	preorderRecursiveTraverseHelper(root.Right, out)
 }
 
-func preorderIterativeTraverseHelper(root *TreeNode) []int {
+func preorderIterativeTraverseHelper(root *bt.TreeNode) []int {
 	if root == nil {
 		return nil
 	}
 
-	q := make([]*TreeNode, 1)
+	q := make([]*bt.TreeNode, 1)
 	top := 0
 
 	q = append(q, root)

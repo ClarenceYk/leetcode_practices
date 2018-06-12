@@ -1,20 +1,22 @@
-package main
+package traverse
 
-func postorderRecursiveTraverse(root *TreeNode) []int {
+import bt "github.com/clarenceyk/leetcode_practices/binary_tree"
+
+func postorderRecursiveTraverse(root *bt.TreeNode) []int {
 	out := make([]int, 0)
 	postorderRecursiveTraverseHelper(root, &out)
 	return out
 }
 
-func postorderIterativeTraverse1(root *TreeNode) []int {
+func postorderIterativeTraverse1(root *bt.TreeNode) []int {
 	return postorderIterativeTraverseHelper1(root)
 }
 
-func postorderIterativeTraverse2(root *TreeNode) []int {
+func postorderIterativeTraverse2(root *bt.TreeNode) []int {
 	return postorderIterativeTraverseHelper2(root)
 }
 
-func postorderRecursiveTraverseHelper(root *TreeNode, out *[]int) {
+func postorderRecursiveTraverseHelper(root *bt.TreeNode, out *[]int) {
 	if root == nil {
 		return
 	}
@@ -23,12 +25,12 @@ func postorderRecursiveTraverseHelper(root *TreeNode, out *[]int) {
 	*out = append(*out, root.Val)
 }
 
-func postorderIterativeTraverseHelper1(root *TreeNode) []int {
+func postorderIterativeTraverseHelper1(root *bt.TreeNode) []int {
 	if root == nil {
 		return nil
 	}
 
-	q := make([]*TreeNode, 1)
+	q := make([]*bt.TreeNode, 1)
 	top := 0
 	q = append(q, root)
 	top++
@@ -57,12 +59,12 @@ func postorderIterativeTraverseHelper1(root *TreeNode) []int {
 	return out
 }
 
-func postorderIterativeTraverseHelper2(root *TreeNode) []int {
+func postorderIterativeTraverseHelper2(root *bt.TreeNode) []int {
 	if root == nil {
 		return nil
 	}
 
-	q := make([]*TreeNode, 1)
+	q := make([]*bt.TreeNode, 1)
 	top := 0
 
 	if root.Right != nil {
